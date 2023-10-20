@@ -11,7 +11,8 @@ const userController ={
                 return callback({err:err})
             } 
             if(result.length > 0){
-                if(result.UserTypeID == 1){
+                if(result[0].UserTypeID == 1){
+                    
                     const error = 'empleados no pueden entrar como usuarios'
                     return callback({error:error})
                 }else{
