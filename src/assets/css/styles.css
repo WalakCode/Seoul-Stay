@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    flex-direction:column;
+    gap: 4vh;
+    align-items: center;
+}
+.buttons{
+    width: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#badge_employee_pass{
+    visibility:hidden;
+    opacity: 0;
+    transition: opacity 0.5s; 
+}
+
+#badge_employee_user{
+    visibility:hidden;
+    opacity: 0;
+    transition: opacity 0.5s; 
+}
+
+#badge_user{
+    visibility:hidden;
+    opacity: 0;
+    transition: opacity 0.5s; 
+}
