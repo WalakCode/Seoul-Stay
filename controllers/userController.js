@@ -3,6 +3,7 @@ const userModel = require('../model/userModel')
 
 const userController ={
     verifyUserInf:(userInf,callback)=>{
+
         const user = userInf.user
         const pass = userInf.pass
 
@@ -31,7 +32,6 @@ const userController ={
 
     } 
 }
-
 
 module.exports = userController;
 

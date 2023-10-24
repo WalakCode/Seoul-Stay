@@ -1,10 +1,10 @@
 const dbC = require('../src/database')
 
 const employeeModel={
-    getEmployeeInfo:({user,employee},callback)=>{
-        const query = 'xxxxx'
+    getEmployeeInfo:(employee,callback)=>{
+        const query = 'SELECT * FROM users WHERE Username = ?'
         const conn = dbC.getConn()
-        conn.query(query,userInf,(err,result)=>{
+        conn.query(query,employee,(err,result)=>{
             if(err){
                 return callback(err,null)
             }
@@ -12,6 +12,8 @@ const employeeModel={
                 return callback(null,result)
             }
         })
+
+        // dbC.closeConn()
     }
 }
 

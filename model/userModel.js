@@ -12,6 +12,7 @@ const userModel={
                 return callback(null,result)
             }
         })
+        // dbC.closeConn()
     }
 }
 

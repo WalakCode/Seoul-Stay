@@ -3,6 +3,8 @@ const path = require('path')
 const userController = require('../controllers/userController')
 const employeeController = require('../controllers/employeeController')
 
+require('electron-reload')(__dirname)
+
 let window 
 function createWindow(){
     window = new BrowserWindow({
@@ -21,15 +23,27 @@ app.whenReady().then(()=>{
 
 ipcMain.on('variable-content',(event,userInf)=>{
   if(userInf.employee){
-    employeeController.verifyEmployeeInf(userInf,({})=>{
-
+    employeeController.verifyEmployeeInf(userInf,({err,error,auth})=>{
+      if(err){
+        console.log(err)
+        window.loadFile('src/views/error.html')
+      }
+      if(error){
+        console.log(error)
+        window.loadFile('src/views/si.html')
+      }
+      if(auth){
+        window.loadFile('src/views/exito.html')
+      }
     })
   }else{
     userController.verifyUserInf(userInf,({err,error,auth})=>{
       if(err){
+        console.log(err)
         window.loadFile('src/views/error.html')
       }
       if(error){
+        console.log(error)
         window.loadFile('src/views/si.html')
       }
       if(auth){

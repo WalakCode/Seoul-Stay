@@ -6,5 +6,4 @@ contextBridge.exposeInMainWorld('electron', {
     sendVariableToMain:(userInf)=>{
     ipcRenderer.send('variable-content',userInf)
   }
-
 });
