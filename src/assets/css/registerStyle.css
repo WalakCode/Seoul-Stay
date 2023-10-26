@@ -1,6 +1,6 @@
 body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -36,6 +36,15 @@ body{
 
 .form-check{
     margin-right: 2vw;
+}
+.butn-form-reg{
+    margin-top: 3vh;
+    margin-right: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 3vh;
 }
 
 

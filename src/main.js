@@ -2,6 +2,7 @@ const {app , BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const userController = require('../controllers/userController')
 const employeeController = require('../controllers/employeeController')
+const { userInfo } = require('os')
 
 require('electron-reload')(__dirname)
 
@@ -21,7 +22,7 @@ app.whenReady().then(()=>{
   createWindow();
 })
 
-ipcMain.on('variable-content',(event,userInf)=>{
+ipcMain.on('inflogin',(event,userInf)=>{
   if(userInf.employee){
     employeeController.verifyEmployeeInf(userInf,({err,error,auth})=>{
       if(err){
@@ -51,6 +52,11 @@ ipcMain.on('variable-content',(event,userInf)=>{
       }
     })
   }
+})
+
+
+ipcMain.on('infreg',(event,userInfo)=>{
+  console.log(userInfo)
 })
 
 

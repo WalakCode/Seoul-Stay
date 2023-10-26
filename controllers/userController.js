@@ -30,7 +30,22 @@ const userController ={
             }
         })
 
-    } 
+    },
+    createUser:(userinfo,callback)=>{
+        const user = userinfo.username
+        userModel.getUserInfo(user,(err,result)=>{
+            if(err){
+                return callback({err:err})
+            } 
+            if(result.length > 0){
+
+                   
+            }else{
+                const error = 'no se encontro usuario'
+                return callback({error:error})
+            }
+        })
+    }
 }
 
 module.exports = userController;

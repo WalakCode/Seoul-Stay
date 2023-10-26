@@ -13,6 +13,13 @@ const userModel={
             }
         })
         // dbC.closeConn()
+    },
+    createUser:(userinfo,callback)=>{
+        const userinfoArray = [userinfo.username,userinfo.name,userinfo.members,userinfo.birthday,userinfo.password,userinfo.gender]
+        const query = 'INSERT INTO users (Username,FullName,FamilyCount,BirthDate,Password,Gender) VALUES ?'
+        const conn = dbC.getConn()
+        conn.query(query,[userinfoArray],(err,r))
+
     }
 }
 

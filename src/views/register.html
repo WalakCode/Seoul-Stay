@@ -13,56 +13,57 @@
         <div class="card-body" id="card_center">
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Username:</label>
-                <input type="text" class="form-control" placeholder="Username" id="inputDefault">
+                <input type="text" id="username" class="form-control" placeholder="Username" required>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                <input class="form-check-input" type="radio" id="male_radio" name="optionsRadios" value="option1" required>
                 <label class="form-check-label" for="optionsRadios1">Male</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                <input class="form-check-input" type="radio"  id="female_radio" name="optionsRadios" value="option2" required>
                 <label class="form-check-label" for="optionsRadios2">Female</label>
             </div>
         </div>
         <div class="card-body" id="card_center">
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Full Name:</label>
-                <input type="text" class="form-control" placeholder="Full Name" id="inputDefault">
+                <input type="text" class="form-control"  id="full_name" placeholder="Full Name" required >
             </div>
-            <div class="-group">
+            <div class="group">
                 <label class="col-form-label" for="inputDefault">Number of Family Members:</label>
-                <input type="number" class="form-control" placeholder="Full Name" id="inputDefault">
+                <input type="number" class="form-control" id="family_members" placeholder="Family Members" required>
             </div>
-            
+        </div>
+        <div class="card-body" id="card_center">
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Birthday</label>
+                <input type="date" class="form-control"  id="birthday" placeholder="Birthday" required>
+            </div>
+        </div>
+        <div class="card-body" id="card_center">
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Password</label>
+                <input type="text" class="form-control"  id="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Retype Password</label>
+                <input type="text" class="form-control"  id="retype_password" placeholder="Retype Password">
+            </div>
+        </div>
+        <div class="card-body" id="card_center">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="terms_conditions_checkbox" disabled>
+                <label class="form-check-label" for="flexCheckChecked">I agree to the Terms and Conditions</label>
+            </div>
+            <div class="form-link">
+                <a href="#" class="card-link" id="terms_conditions">View Terms and Conditions</a>
+            </div>
         </div>
     </div>    
+    <div class="butn-form-reg">
+        <button type="button" id="register_login" class="btn btn-outline-primary">Register & login</button>
+        <button type="button" id="return-login-btn" class="btn btn-outline-secondary">Return login form</button>
+    </div>
+    <script src="../views/js/register.js"></script>
 </body>
 </html>
-
-<!-- <div>
-    <label class="col-form-label mt-4" for="inputDefault">Username</label>
-    <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-    <label class="col-form-label mt-4" for="inputDefault">Full Name</label>
-    <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-    <label class="col-form-label mt-4" for="inputDefault">Birthday</label>
-    <input type="date" class="form-control" placeholder="Default input" id="inputDefault">
-    <label class="col-form-label mt-4" for="inputDefault">Password</label>
-    <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">i agree to the Terms and Conditions</label>
-  </div>
-  <div>
-    <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-    <label class="form-check-label" for="optionsRadios1">
-      Option one is this and that—be sure to include why it's great
-    </label>
-    <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-    <label class="form-check-label" for="optionsRadios1">
-      Option one is this and that—be sure to include why it's great
-    </label>
-    <label class="col-form-label mt-4" for="inputDefault">Default input</label>
-    <input type="number" class="form-control" placeholder="Default input" id="inputDefault">
-    <label class="col-form-label mt-4" for="inputDefault">Default input</label>
-    <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-    <p>View Terms and Conditions<a href="../views/register.html" style="margin-left: 3vh;"></a></p>
-  </div> -->

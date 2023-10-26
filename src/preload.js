@@ -3,7 +3,11 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 // Exponer solo las funciones y objetos seguros
 contextBridge.exposeInMainWorld('electron', {
-    sendVariableToMain:(userInf)=>{
-    ipcRenderer.send('variable-content',userInf)
+    logininf:(userInf)=>{
+    ipcRenderer.send('inflogin',userInf)
+  },
+  regisinf:(userinfo)=>{
+    ipcRenderer.send('infreg',userinfo)
   }
+
 });
