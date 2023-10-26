@@ -59,7 +59,6 @@ function upload(){
     const userinfo = sotreInfo();
      if(userinfo){
         if(userinfo.username && (male_radio.checked || female_radio.checked) && userinfo.name && userinfo.members && userinfo.birthday && userinfo.password){
-            console.log("ola")
             window.electron.regisinf(userinfo)
         }
     }

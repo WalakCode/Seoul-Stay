@@ -56,7 +56,9 @@ ipcMain.on('inflogin',(event,userInf)=>{
 
 
 ipcMain.on('infreg',(event,userInfo)=>{
-  console.log(userInfo)
+  userController.createUser(userInfo,({err,error,gud})=>{
+    console.log('ol')
+  })
 })
 
 

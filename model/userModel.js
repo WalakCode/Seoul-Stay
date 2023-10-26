@@ -15,10 +15,24 @@ const userModel={
         // dbC.closeConn()
     },
     createUser:(userinfo,callback)=>{
-        const userinfoArray = [userinfo.username,userinfo.name,userinfo.members,userinfo.birthday,userinfo.password,userinfo.gender]
-        const query = 'INSERT INTO users (Username,FullName,FamilyCount,BirthDate,Password,Gender) VALUES ?'
+        const members = parseInt(userinfo.members) 
+        const gender = parseInt(userinfo.gender)
+
+        const userinfoArray = [userinfo.username,userinfo.name,members,userinfo.birthday,userinfo.password,gender]
+        const query = 'INSERT INTO users (Username, FullName, FamilyCount, BirthDate, Password, Gender) VALUES (?, ?, ?, ?, ?, ?)';
         const conn = dbC.getConn()
-        conn.query(query,[userinfoArray],(err,r))
+
+        console.log(userinfoArray)
+
+        conn.query(query,userinfoArray,(err,results)=>{
+            if(err){
+                console.log(err)
+                return callback(err,null)
+            }
+            if(results){
+                return callback(null,results)
+            }
+        })
 
     }
 }
