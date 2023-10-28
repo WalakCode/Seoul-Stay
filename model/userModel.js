@@ -14,17 +14,16 @@ const userModel={
         })
         // dbC.closeConn()
     },
-    maxId:()=>{
+    maxId:(callback)=>{
         const query = 'SELECT MAX(ID)+1 AS id FROM users'
         const conn = dbC.getConn()
         conn.query(query,(err,result)=>{
             if(err){
-                return null
+                return callback(null)
             }
             if(result){
                 const Id = result[0].id
-                console.log(Id)
-                return Id
+                return callback(Id)
             }
         })
     },
@@ -33,14 +32,14 @@ const userModel={
         const members = parseInt(userinfo.members) 
         const gender = parseInt(userinfo.gender)
 
-        const Id = userModel.maxId();
+        userModel.maxId((Id)=>{
+        
+            const userinfoArray = [Id,2,userinfo.username,userinfo.password,userinfo.name,gender,userinfo.birthday,members]
+            console.log(userinfoArray)
 
-        const userinfoArray = [Id,2,userinfo.username,userinfo.password,userinfo.name,gender,userinfo.birthday,members]
-        console.log(userinfoArray)
-
-        const query = 'INSERT INTO users (ID,UserTypeID,Username,Password,FullName,Gender,BirthDate,FamilyCount) VALUES (?, ?, ?, ?, ?, ?)';
-        const conn = dbC.getConn()
-        conn.query(query,userinfoArray,(err,results)=>{
+            const query = 'INSERT INTO users (ID,UserTypeID,Username,Password,FullName,Gender,BirthDate,FamilyCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+            const conn = dbC.getConn()
+            conn.query(query,userinfoArray,(err,results)=>{
             if(err){
                 console.log(err)
                 return callback(err,null)
@@ -48,8 +47,8 @@ const userModel={
             if(results){
                 return callback(null,results)
             }
+            })
         })
-
     }
 }
 
