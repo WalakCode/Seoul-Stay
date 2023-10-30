@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/registerStyle.css">
-    <title>Document</title>
+    <title>Seoul Stay - Create Account</title>
 </head>
+
 <body>
     <div class="card border-secondary" id="card_form">
         <div class="card-header">Your Information</div>
@@ -16,18 +18,20 @@
                 <input type="text" id="username" class="form-control" placeholder="Username" required>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" id="male_radio" name="optionsRadios" value="option1" required>
+                <input class="form-check-input" type="radio" id="male_radio" name="optionsRadios" value="option1"
+                    required>
                 <label class="form-check-label" for="optionsRadios1">Male</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio"  id="female_radio" name="optionsRadios" value="option2" required>
+                <input class="form-check-input" type="radio" id="female_radio" name="optionsRadios" value="option2"
+                    required>
                 <label class="form-check-label" for="optionsRadios2">Female</label>
             </div>
         </div>
         <div class="card-body" id="card_center">
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Full Name:</label>
-                <input type="text" class="form-control"  id="full_name" placeholder="Full Name" required >
+                <input type="text" class="form-control" id="full_name" placeholder="Full Name" required>
             </div>
             <div class="group">
                 <label class="col-form-label" for="inputDefault">Number of Family Members:</label>
@@ -37,17 +41,17 @@
         <div class="card-body" id="card_center">
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Birthday</label>
-                <input type="date" class="form-control"  id="birthday" placeholder="Birthday" required>
+                <input type="date" class="form-control" id="birthday" placeholder="Birthday" required>
             </div>
         </div>
         <div class="card-body" id="card_center">
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Password</label>
-                <input type="text" class="form-control"  id="password" placeholder="Password" required>
+                <input type="text" class="form-control" id="password" placeholder="Password" required>
             </div>
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Retype Password</label>
-                <input type="text" class="form-control"  id="retype_password" placeholder="Retype Password">
+                <input type="text" class="form-control" id="retype_password" placeholder="Retype Password">
             </div>
         </div>
         <div class="card-body" id="card_center">
@@ -56,14 +60,73 @@
                 <label class="form-check-label" for="flexCheckChecked">I agree to the Terms and Conditions</label>
             </div>
             <div class="form-link">
-                <a href="#" class="card-link" id="terms_conditions">View Terms and Conditions</a>
+                <a href="#" class="card-link" id="terms_conditions" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">View Terms and Conditions</a>
             </div>
         </div>
-    </div>    
+    </div>
     <div class="butn-form-reg">
         <button type="button" id="register_login" class="btn btn-outline-primary">Register & login</button>
         <button type="button" id="return-login-btn" class="btn btn-outline-secondary">Return login form</button>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title lead text-success">Last Updated: February 10, 2022</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead text-secondary">Thank you for using Stay Seoul!</p>
+                    <p class="lead">
+                        These Terms of Service (“Terms”) are a binding legal agreement between you and Stay Seoul that
+                        govern your right to use the websites, applications, and other offerings from Stay Seoul
+                        (collectively, the “Stay Seoul Platform”).
+                        When used in these Terms, “Stay Seoul,” “we,” “us,” or “our” refers to the Stay Seoul entity set
+                        out
+                        on Schedule 1 with whom you are contracting.
+
+                        The Stay Seoul Platform offers an online venue that enables users (“Members”) to publish, offer,
+                        search for, and book services.
+                        Members who publish and offer services are “Hosts” and Members who search for, book, or use
+                        services
+                        are “Guests.” Hosts offer accommodations (“Accommodations”), activities, excursions, and events
+                        (“Experiences”), and a variety of travel and other services (collectively, “Host Services,” and
+                        each
+                        Host Service offering, a “Listing”).
+                        You must register an account to access and use many features of the Stay Seoul Platform, and
+                        must
+                        keep your account information accurate.
+                        As the provider of the Stay Seoul Platform, Stay Seoul does not own, control, offer or manage
+                        any
+                        Listings or Host Services.
+                        Stay Seoul is not a party to the contracts entered into directly between Hosts and Guests, nor
+                        is
+                        Stay Seoul a real estate broker, travel agency, or insurer.
+                        Stay Seoul is not acting as an agent in any capacity for any Member, except as specified in the
+                        Payments Terms of Service (“Payment Terms”).
+                        We maintain other terms and policies that supplement these Terms like our Privacy Policy, which
+                        describes our collection and use of personal data, and our Payments Terms, which govern any
+                        payment
+                        services provided to Members by the Stay Seoul payment entities (collectively "Stay Seoul
+                        Payments").
+
+                        If you are a Host, you are responsible for understanding and complying with all laws, rules,
+                        regulations and contracts with third parties that apply to your Host Services.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="../views/js/register.js"></script>
 </body>
+
 </html>

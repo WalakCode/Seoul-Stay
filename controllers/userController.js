@@ -34,14 +34,17 @@ const userController ={
     createUser:(userinfo,callback)=>{
         const user = userinfo.username
         userModel.getUserInfo(user,(err,result)=>{
-            console.log(err,result)
             if(err){
                 return callback({err:err})
             } 
             if(result.length == 0){
                 userModel.createUser(userinfo,(err,result)=>{
-                    console.log('ola')
-                    return callback({gud:'gud'})
+                    if(err){
+                        return callback({err:err})
+                    }
+                    if(result){
+                        return callback({auth:true})
+                    }
                 })
             }else{
                 const error = 'usuario repetido'

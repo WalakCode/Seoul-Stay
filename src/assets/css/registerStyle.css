@@ -1,50 +1,31 @@
 body{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-#card_form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
     
 }
-
+#card_form{
+    width: 85vh;
+    max-width: 80vh;
+    display: flex;
+    flex-direction: column;
+}
 #card_center{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
-.form-group{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 2vw;
-    width: 50%;
-}
 
-.form-group label{
-   
-    width:50%;
-}
-
-.form-check{
-    margin-right: 2vw;
-}
 .butn-form-reg{
-    margin-top: 3vh;
-    margin-right: 2vh;
-    width: 100%;
+    min-width: 80vh;
+    width:73vh;
     display: flex;
     flex-direction: row;
+    gap: 2vh;
     justify-content: end;
-    gap: 3vh;
+    
+    
 }
-
 

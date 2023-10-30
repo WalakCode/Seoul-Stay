@@ -56,8 +56,19 @@ ipcMain.on('inflogin',(event,userInf)=>{
 
 
 ipcMain.on('infreg',(event,userInfo)=>{
-  userController.createUser(userInfo,({err,error,gud})=>{
-    console.log('ol')
+  userController.createUser(userInfo,({err,error,auth})=>{
+    if(err){
+      console.log(err)
+      window.loadFile('src/views/error.html')
+    }
+    if(error){
+      console.log(error)
+      window.loadFile('src/views/si.html')
+    }
+    if(auth){
+      window.loadFile('src/views/exito.html')
+    }
+
   })
 })
 

@@ -5,7 +5,8 @@ body{
     align-items: center;
 }
 .buttons{
-    width: 30vh;
+    gap: 10%;
+    width: 40vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,4 +28,13 @@ body{
     visibility:hidden;
     opacity: 0;
     transition: opacity 0.5s; 
+}
+
+#login{
+width: 40%;
+}
+
+#Logout{
+    width: 40%;
+
 }

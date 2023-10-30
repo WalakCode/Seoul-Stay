@@ -1,4 +1,5 @@
 const dbC = require('../src/database')
+const { v4: uuidv4 } = require('uuid');
 
 const userModel={
     getUserInfo:(userInf,callback)=>{
@@ -31,13 +32,14 @@ const userModel={
     createUser:(userinfo,callback)=>{
         const members = parseInt(userinfo.members) 
         const gender = parseInt(userinfo.gender)
+        const guid = uuidv4();
+        const Upguid = guid.toUpperCase()
 
         userModel.maxId((Id)=>{
         
-            const userinfoArray = [Id,2,userinfo.username,userinfo.password,userinfo.name,gender,userinfo.birthday,members]
-            console.log(userinfoArray)
+            const userinfoArray = [Upguid,Id,2,userinfo.username,userinfo.password,userinfo.name,gender,userinfo.birthday,members]
 
-            const query = 'INSERT INTO users (ID,UserTypeID,Username,Password,FullName,Gender,BirthDate,FamilyCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+            const query = 'INSERT INTO users (GUID,ID,UserTypeID,Username,Password,FullName,Gender,BirthDate,FamilyCount) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
             const conn = dbC.getConn()
             conn.query(query,userinfoArray,(err,results)=>{
             if(err){
