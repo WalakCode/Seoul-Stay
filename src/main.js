@@ -11,6 +11,7 @@ function createWindow(){
     window = new BrowserWindow({
         width:700,
         height:800,
+        center:true,
         webPreferences:{
           preload: path.join(__dirname,'preload.js')
         }
@@ -34,7 +35,10 @@ ipcMain.on('inflogin',(event,userInf)=>{
         window.loadFile('src/views/si.html')
       }
       if(auth){
-        window.loadFile('src/views/exito.html')
+        window.setPosition(0, 0)
+        window.setSize(1200,800)
+
+        window.loadFile('src/views/manage.html')
       }
     })
   }else{
@@ -48,7 +52,10 @@ ipcMain.on('inflogin',(event,userInf)=>{
         window.loadFile('src/views/si.html')
       }
       if(auth){
-        window.loadFile('src/views/exito.html')
+        window.setPosition(0, 0)
+        window.setSize(1200,800)
+
+        window.loadFile('src/views/manage.html')
       }
     })
   }
@@ -66,7 +73,9 @@ ipcMain.on('infreg',(event,userInfo)=>{
       window.loadFile('src/views/si.html')
     }
     if(auth){
-      window.loadFile('src/views/exito.html')
+      window.setPosition(0,0)
+      window.setSize(1200,800)
+      window.loadFile('src/views/manage.html')
     }
 
   })

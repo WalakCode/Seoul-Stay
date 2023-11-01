@@ -10,6 +10,22 @@ const password = document.getElementById('password')
 const retype_pasword = document.getElementById('retype_password')
 const terms_conditions_checkbox = document.getElementById('terms_conditions_checkbox')
 const terms_conditions = document.getElementById('terms_conditions')
+const inputs = document.querySelectorAll('input');
+
+function check(){
+    if(username.value && (male_radio.checked || female_radio.checked) && full_name.value && family_members.value && birthday.value && password.value && retype_pasword.value && terms_conditions_checkbox.checked){
+        register_and_login.removeAttribute('disabled')
+    }else{
+        register_and_login.disabled = true
+    }
+}
+
+
+let interval
+function repeat(){
+interval = setInterval(check,1)
+}
+repeat()
 
 
 let counter = 0
@@ -28,7 +44,6 @@ terms_conditions.addEventListener('click',(e)=>{
     terms_conditions_checkbox.removeAttribute('disabled')
     counter = 1
 })
-
 
 function sotreInfo(){
     if(password.value == retype_pasword.value){
@@ -63,5 +78,6 @@ function upload(){
         }
     }
 }
+
 
 

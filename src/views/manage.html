@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/manageStyle.css" />
+    <title>Seoul Stay - Management</title>
+  </head>
+  <body>
+    <header>
+      <img
+        class="image_logo"
+        src="../assets/img/negtivomonocromatico.png"
+        alt="seullogo"
+        width="300"
+      />
+    </header>
+    <div id="buttons">
+        <button type="button" id="exit" class="btn btn-outline-danger">Exit</button>
+        <button type="button" id="log_out" class="btn btn-outline-warning">Log out</button>
+
+    </div>
+
+    <div class="card border-warning" id="card_form">
+      <div class="card-header">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              data-bs-toggle="tab"
+              href="#home"
+              aria-selected="false"
+              role="tab"
+              tabindex="-1"
+            >
+              I'm Traveler
+            </a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              data-bs-toggle="tab"
+              href="#profile"
+              aria-selected="true"
+              role="tab"
+            >
+              I'm Owner / Manager
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-body">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade" id="home" role="tabpanel">
+            <p>
+              Raw denim you probably haven't heard of them jean shorts Austin.
+              Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+              Mustache cliche tempor, williamsburg carles vegan helvetica.
+              Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
+              sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+              placeat salvia cillum iphone. Seitan aliquip quis cardigan
+              american apparel, butcher voluptate nisi qui.
+            </p>
+          </div>
+          <div class="tab-pane fade active show" id="profile" role="tabpanel">
+            <p>
+              Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+              single-origin coffee squid. Exercitation +1 labore velit, blog
+              sartorial PBR leggings next level wes anderson artisan four loko
+              farm-to-table craft beer twee. Qui photo booth letterpress,
+              commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+              vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic
+              magna delectus mollit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="card border-light">
+      <p class="text-success">3 items found</p>
+    </footer>
+    <script src="../views/js/manage.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
